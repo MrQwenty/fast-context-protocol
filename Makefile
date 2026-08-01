@@ -16,3 +16,4 @@ build:
 	mkdir -p bin
 	go build -o bin/fcpd ./cmd/fcpd
 	go build -o bin/fcpctl ./cmd/fcpctl
+	go build -o bin/fcpconform ./cmd/fcpconform
