@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "auto:architecture",
+      "type": "architecture.overview",
+      "version": "1",
+      "contentType": "text/markdown",
+      "content": "# Example service architecture\n\nThe API receives requests, validates identity and policy, and dispatches work to isolated workers. PostgreSQL stores durable state. Redis is used only for ephemeral coordination. All external side effects are idempotent and recorded with an operation key.",
+      "priority": 1.0,
+      "confidence": 0.98,
+      "sensitivity": "internal",
+      "createdAt": "2026-08-01T12:00:00Z",
+      "provenance": {
+        "provider": "example-provider",
+        "resource": "repo://example/service/docs/architecture.md",
+        "author": "platform-team",
+        "retrievedAt": "2026-08-01T12:00:00Z"
+      },
+      "intents": ["code.review", "architecture.*"],
+      "targets": ["*"]
+    },
+    {
+      "id": "auto:review-policy",
+      "type": "policy.code-review",
+      "version": "3",
+      "contentType": "text/markdown",
+      "content": "# Review policy\n\nReject changes that bypass authorization, log secrets, introduce unbounded retries, or perform non-idempotent side effects without a stable operation key. Require tests for failure paths and concurrency-sensitive behavior.",
+      "priority": 0.95,
+      "confidence": 1.0,
+      "sensitivity": "internal",
+      "createdAt": "2026-08-01T12:00:00Z",
+      "provenance": {
+        "provider": "example-provider",
+        "resource": "repo://example/service/docs/review-policy.md",
+        "author": "security-team",
+        "retrievedAt": "2026-08-01T12:00:00Z"
+      },
+      "intents": ["code.review"],
+      "targets": ["*"]
+    },
+    {
+      "id": "auto:public-background",
+      "type": "project.summary",
+      "version": "1",
+      "contentType": "text/plain",
+      "content": "This example project demonstrates budget-aware context resolution with content-addressed chunks and provenance.",
+      "priority": 0.5,
+      "confidence": 0.9,
+      "sensitivity": "public",
+      "createdAt": "2026-08-01T12:00:00Z",
+      "provenance": {
+        "provider": "example-provider",
+        "resource": "repo://example/service/README.md",
+        "retrievedAt": "2026-08-01T12:00:00Z"
+      },
+      "intents": ["*"],
+      "targets": ["*"]
+    }
+  ]
+}
