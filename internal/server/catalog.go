@@ -62,3 +62,12 @@ func estimateTokens(content string) int {
 	}
 	return (words*4 + 2) / 3
 }
+
+// NewCatalogueForTesting builds an in-memory catalogue for conformance and unit tests.
+func NewCatalogueForTesting(nodes []protocol.ContextNode) *Catalogue {
+	byID := make(map[string]protocol.ContextNode, len(nodes))
+	for _, node := range nodes {
+		byID[node.ID] = node
+	}
+	return &Catalogue{Nodes: nodes, byID: byID}
+}
