@@ -24,4 +24,14 @@ jobs:
       - name: Test
         run: go test -race ./...
       - name: Build
-        run: go build ./cmd/fcpd ./cmd/fcpctl
+        run: go build ./cmd/fcpd ./cmd/fcpctl ./cmd/fcpconform
+      - name: Conformance smoke test
+        run: |
+          go run ./cmd/fcpd -listen :8080 -catalog examples/basic-provider/context.json >/tmp/fcpd.log 2>&1 &
+          pid=$!
+          trap 'kill $pid' EXIT
+          for attempt in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:8080/healthz >/dev/null && break
+            sleep 0.2
+          done
+          go run ./cmd/fcpconform -endpoint http://127.0.0.1:8080
