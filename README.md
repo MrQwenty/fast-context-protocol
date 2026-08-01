@@ -25,6 +25,7 @@ FCP is not intended to replace tool execution protocols. It can sit beside them 
 ```text
 cmd/fcpd/                 Minimal reference server
 cmd/fcpctl/               Minimal command-line client
+cmd/fcpconform/           Provider conformance runner
 internal/protocol/        FCP 0.1 Go types
 internal/server/          Resolver and HTTP transport
 spec/schema/              JSON Schema
@@ -49,6 +50,16 @@ go run ./cmd/fcpctl \
   -max-tokens 4000 \
   -max-latency-ms 80
 ```
+
+## Validate a provider
+
+Run the baseline conformance checks against any FCP endpoint:
+
+```bash
+go run ./cmd/fcpconform -endpoint http://localhost:8080
+```
+
+The command emits a machine-readable JSON report and exits non-zero when discovery, version negotiation, budget enforcement, or error semantics are non-conforming.
 
 ## FCP 0.1 lifecycle
 
