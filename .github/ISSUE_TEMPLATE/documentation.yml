@@ -1,7 +1,7 @@
 name: Documentation
 description: Report missing, unclear, incorrect, or outdated documentation.
 title: "docs: "
-labels: ["documentation", "needs-triage"]
+labels: ["documentation"]
 body:
   - type: input
     id: location
