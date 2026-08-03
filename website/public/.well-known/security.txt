@@ -1,0 +1,5 @@
+Contact: https://github.com/MrQwenty/fast-context-protocol/security/advisories/new
+Expires: 2027-08-03T00:00:00Z
+Canonical: https://mrqwenty.github.io/fast-context-protocol/.well-known/security.txt
+Policy: https://github.com/MrQwenty/fast-context-protocol/blob/master/SECURITY.md
+Preferred-Languages: en, it

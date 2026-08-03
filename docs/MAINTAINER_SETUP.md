@@ -46,7 +46,7 @@ The public reporting policy is in `SECURITY.md`.
 
 Protect the default branch `master` with a repository ruleset or branch protection rule.
 
-Recommended minimum:
+Recommended minimum for external contributors:
 
 - require a pull request before merging;
 - require conversation resolution;
@@ -58,14 +58,35 @@ Recommended minimum:
 - require the branch to be up to date before merge;
 - require signed commits when the contributor workflow supports them.
 
+### Lead-maintainer bypass
+
+This repository is currently maintained by one owner. The rules must not require the owner to obtain reviews that cannot exist.
+
+Preferred configuration with a repository ruleset:
+
+1. Open **Settings → Rules → Rulesets**.
+2. Edit the ruleset targeting `master`.
+3. Under **Bypass list**, click **Add bypass**.
+4. Add **Repository administrators** or `@MrQwenty`, depending on the actors offered by GitHub.
+5. Select **Always allow**, not **For pull requests only**.
+6. Keep pull-request reviews and required checks enabled for everyone else.
+
+This allows the owner to push directly, merge without approvals, and perform bootstrap or emergency maintenance while preserving contributor protections.
+
+If the repository uses a classic branch-protection rule instead:
+
+- leave **Do not allow bypassing the above settings** disabled;
+- enable **Allow specified actors to bypass required pull requests** and select `@MrQwenty` if the option is available;
+- reduce required approving reviews from `2` to `1` or `0` until at least two additional trusted maintainers exist.
+
+Do not grant broad write-role bypass to normal contributors.
+
 Suggested required checks after they have run at least once:
 
 - CI / test;
 - CodeQL / Analyze;
 - Documentation / build;
-- dependency review, if enabled.
-
-A single-maintainer project may temporarily allow the lead maintainer to bypass review requirements for emergency and bootstrap changes. Any bypass should be used sparingly.
+- Dependency Review, after Dependency graph is enabled.
 
 ## Actions permissions
 

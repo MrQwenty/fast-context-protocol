@@ -16,9 +16,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Detect dependency graph
+        id: dependency-graph
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          status=$(curl --silent --output /tmp/sbom.json --write-out '%{http_code}' \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header 'Accept: application/vnd.github+json' \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/dependency-graph/sbom")
+
+          if [ "$status" = "200" ]; then
+            echo 'enabled=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'enabled=false' >> "$GITHUB_OUTPUT"
+            echo "::warning::Dependency graph is not enabled. Enable it in Settings → Code security and analysis to enforce dependency review."
+          fi
+
       - name: Review dependency changes
+        if: steps.dependency-graph.outputs.enabled == 'true'
         uses: actions/dependency-review-action@v4
         continue-on-error: true
         with:
           fail-on-severity: high
           comment-summary-in-pr: always
+
+      - name: Dependency graph setup required
+        if: steps.dependency-graph.outputs.enabled != 'true'
+        run: |
+          echo 'Dependency review was skipped because the repository dependency graph is disabled.'
+          echo 'See docs/MAINTAINER_SETUP.md for the required repository setting.'

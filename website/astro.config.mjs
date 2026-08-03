@@ -15,9 +15,13 @@ export default defineConfig({
         alt: 'CGP',
         replacesTitle: false,
       },
-      social: {
-        github: 'https://github.com/MrQwenty/fast-context-protocol',
-      },
+      social: [
+        {
+          icon: 'github',
+          label: 'GitHub',
+          href: 'https://github.com/MrQwenty/fast-context-protocol',
+        },
+      ],
       editLink: {
         baseUrl: 'https://github.com/MrQwenty/fast-context-protocol/edit/master/website/src/content/docs/',
       },
