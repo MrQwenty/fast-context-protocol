@@ -1,0 +1,100 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+---
+<SiteLayout
+  title="CGP — Context Governance Protocol"
+  description="Open infrastructure for private, policy-bound and provable AI context."
+>
+  <section class="hero">
+    <span class="eyebrow">Open protocol · Pre-alpha</span>
+    <div class="hero-grid">
+      <div>
+        <h1>Govern what AI <span class="gradient-text">is allowed to know.</span></h1>
+        <p class="hero-copy">
+          CGP is an open protocol and runtime layer for selecting, sanitizing, authorizing and proving the context delivered to AI systems.
+        </p>
+        <div class="actions">
+          <a class="button button-primary" href="/docs/">Read the documentation →</a>
+          <a class="button button-secondary" href="https://github.com/MrQwenty/fast-context-protocol">Explore the source</a>
+        </div>
+      </div>
+      <div class="terminal" aria-label="Example context contract">
+        <div class="terminal-head">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="terminal-title">context-contract.json</span>
+        </div>
+        <pre><code>{
+  <span class="code-key">"intent"</span>: <span class="code-value">"legal-document-summary"</span>,
+  <span class="code-key">"budget"</span>: {
+    <span class="code-key">"maxTokens"</span>: 8000,
+    <span class="code-key">"maxLatencyMs"</span>: 100
+  },
+  <span class="code-key">"privacy"</span>: <span class="code-value">"anonymous-only"</span>,
+  <span class="code-key">"jurisdiction"</span>: <span class="code-value">"EU"</span>,
+  <span class="code-key">"retention"</span>: <span class="code-value">"zero"</span>,
+  <span class="code-key">"provenance"</span>: true
+}</code></pre>
+        <div class="decision-strip">
+          <span>ALLOW</span><span>SANITIZE</span><span>ROUTE_LOCAL</span><span>REQUIRE_HUMAN</span><span>DENY</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="section-label">The missing control plane</span>
+    <h2>AI connectivity grew faster than AI governance.</h2>
+    <p class="section-lead">
+      Applications can reach files, tools, databases and APIs, but the logic deciding what reaches a model is still scattered across prompts, retrieval code, security middleware and compliance documents.
+    </p>
+    <div class="feature-grid">
+      <article class="card"><span class="card-number">01</span><h3>Context planning</h3><p>Resolve the smallest useful context under explicit token, byte, freshness and latency constraints.</p></article>
+      <article class="card"><span class="card-number">02</span><h3>Local privacy</h3><p>Extract, redact, pseudonymize or anonymize documents before any external inference occurs.</p></article>
+      <article class="card"><span class="card-number">03</span><h3>Policy enforcement</h3><p>Bind context to purpose, jurisdiction, retention, provider capabilities and human oversight.</p></article>
+      <article class="card"><span class="card-number">04</span><h3>Trust boundaries</h3><p>Keep untrusted documents and tool output from becoming instructions or permissions.</p></article>
+      <article class="card"><span class="card-number">05</span><h3>Provider routing</h3><p>Choose local, EU-hosted or cloud inference based on declared processing requirements.</p></article>
+      <article class="card"><span class="card-number">06</span><h3>Portable evidence</h3><p>Produce receipts that reconstruct context, transformations, policy and routing decisions.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="section-label">Request lifecycle</span>
+    <h2>One governed path from source to model.</h2>
+    <p class="section-lead">CGP turns data access into a deterministic pipeline rather than an unbounded prompt assembly process.</p>
+    <div class="flow">
+      <div class="flow-step"><small>01</small><strong>Inspect source</strong></div>
+      <div class="flow-step active"><small>02</small><strong>Sanitize locally</strong></div>
+      <div class="flow-step"><small>03</small><strong>Plan context</strong></div>
+      <div class="flow-step"><small>04</small><strong>Enforce trust</strong></div>
+      <div class="flow-step"><small>05</small><strong>Route provider</strong></div>
+      <div class="flow-step active"><small>06</small><strong>Issue receipts</strong></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="section-label">Different layer, different question</span>
+    <h2>CGP complements MCP instead of copying it.</h2>
+    <p class="section-lead">MCP connects applications to tools and resources. CGP governs the context compiled from those resources before it reaches a model.</p>
+    <div class="comparison">
+      <div class="comparison-row"><div>Concern</div><div>MCP</div><div>CGP</div></div>
+      <div class="comparison-row"><div>Primary question</div><div>What is available?</div><div class="highlight">What may the model receive now?</div></div>
+      <div class="comparison-row"><div>Token and latency budgets</div><div>Host-defined</div><div class="highlight">Protocol contract</div></div>
+      <div class="comparison-row"><div>Local anonymization</div><div>Outside core scope</div><div class="highlight">First-class gateway</div></div>
+      <div class="comparison-row"><div>Purpose and jurisdiction</div><div>Application logic</div><div class="highlight">Governance primitives</div></div>
+      <div class="comparison-row"><div>Decision evidence</div><div>Implementation-specific</div><div class="highlight">Portable receipts</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="cta-panel">
+      <div>
+        <h2>Help build open governed-context infrastructure.</h2>
+        <p>Use the protocol, contribute to the implementation or fund independent development through GitHub Sponsors.</p>
+      </div>
+      <div class="actions">
+        <a class="button button-primary" href="/docs/">Start with the docs</a>
+        <a class="button button-sponsor" href="/donations/">Support CGP</a>
+      </div>
+    </div>
+  </section>
+</SiteLayout>
