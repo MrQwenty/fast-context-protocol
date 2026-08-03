@@ -1,0 +1,35 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const sections = [
+  { tag: 'Start', title: 'Quick start', text: 'Run the reference provider, resolve a Context Plan and validate it with the conformance runner.', href: '/getting-started/quick-start/' },
+  { tag: 'Core', title: 'Context Contract', text: 'Declare intent, budgets, freshness, provenance, sensitivity and known context.', href: '/concepts/context-contract/' },
+  { tag: 'Core', title: 'Context Graph', text: 'Model context as typed, immutable and content-addressed nodes with relationships.', href: '/concepts/context-graph/' },
+  { tag: 'Architecture', title: 'System overview', text: 'Understand the gateway, planner, privacy layer, policy engine, firewall and router.', href: '/architecture/overview/' },
+  { tag: 'Privacy', title: 'Local Privacy Gateway', text: 'Extract and transform documents before data reaches an external model or provider.', href: '/privacy/local-gateway/' },
+  { tag: 'Privacy', title: 'Anonymization model', text: 'Distinguish redaction, pseudonymization, anonymization and residual risk.', href: '/privacy/anonymization/' },
+  { tag: 'Security', title: 'Context Trust Firewall', text: 'Separate untrusted data from instructions, permissions and executable capabilities.', href: '/security/trust-firewall/' },
+  { tag: 'Governance', title: 'EU governance direction', text: 'Review the target enforcement model for privacy, AI Act duties and evidence generation.', href: '/governance/eu-compliance/' },
+  { tag: 'Integration', title: 'CGP and MCP', text: 'See how CGP consumes MCP resources and governs the context compiled from them.', href: '/integrations/mcp/' },
+  { tag: 'Reference', title: 'HTTP API', text: 'Discovery, resolve, fetch, receipts and current compatibility namespaces.', href: '/reference/http-api/' },
+  { tag: 'Reference', title: 'Receipts', text: 'Inspect the portable evidence model for privacy, plans, routing and policy decisions.', href: '/reference/receipts/' },
+  { tag: 'Project', title: 'Roadmap', text: 'Track implemented, experimental and planned capabilities without marketing ambiguity.', href: '/project/roadmap/' },
+];
+---
+<SiteLayout title="CGP Documentation" description="Technical documentation for the Context Governance Protocol.">
+  <section class="docs-hero">
+    <span class="eyebrow">Technical documentation</span>
+    <h1>Build with governed context.</h1>
+    <p>Protocol concepts, reference behavior, privacy architecture, security boundaries, integration guidance and project governance.</p>
+  </section>
+  <section class="docs-grid">
+    {sections.map((section) => (
+      <a class="docs-card" href={section.href}>
+        <span class="tag">{section.tag}</span>
+        <h2>{section.title}</h2>
+        <p>{section.text}</p>
+        <span class="arrow">Open documentation →</span>
+      </a>
+    ))}
+  </section>
+</SiteLayout>
