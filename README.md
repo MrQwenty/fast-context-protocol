@@ -6,6 +6,9 @@
 [![Status](https://img.shields.io/badge/status-pre--alpha-orange)](#project-status)
 [![Go](https://img.shields.io/badge/Go-1.23+-00ADD8?logo=go&logoColor=white)](go.mod)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+[![Sponsor](https://img.shields.io/badge/Sponsor-MrQwenty-EA4AAA?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/MrQwenty)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FMrQwenty%2Ffast-context-protocol&root-directory=website&project-name=cgp-protocol)
 
 **Context Governance Protocol (CGP)** is an experimental, model-agnostic protocol and runtime for deciding:
 
@@ -194,7 +197,7 @@ go run ./cmd/fcpconform -endpoint http://localhost:8080
 
 The framework-style landing and documentation source lives in [`website/`](website/). It includes architecture, concepts, privacy, governance, security, integrations, API reference, project status and roadmap documentation.
 
-The included GitHub Pages workflow builds and publishes the static site after Pages is configured to use **GitHub Actions**.
+The site is configured as a static Astro project for Vercel. Import the repository with `website` as the Root Directory; Vercel then deploys `master` to production and creates previews for pull requests automatically.
 
 ## Compatibility naming
 
