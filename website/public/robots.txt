@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mrqwenty.github.io/fast-context-protocol/sitemap-index.xml
