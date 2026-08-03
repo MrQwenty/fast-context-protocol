@@ -1,7 +1,7 @@
 name: Protocol proposal
 description: Propose a change to CGP wire behavior, semantics, or conformance.
 title: "protocol: "
-labels: ["protocol", "rfc", "needs-design"]
+labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
