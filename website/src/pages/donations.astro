@@ -1,0 +1,76 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+---
+<SiteLayout
+  title="Support CGP — Donations"
+  description="Support the open development of the Context Governance Protocol through GitHub Sponsors."
+>
+  <section class="donation-hero">
+    <span class="eyebrow">Open-source funding</span>
+    <h1>Fund infrastructure that keeps AI context private and accountable.</h1>
+    <p>
+      CGP is being developed as an open protocol, open reference implementation and public conformance layer. Sponsorship helps keep the core auditable, independent and accessible.
+    </p>
+  </section>
+
+  <section class="donation-layout">
+    <article class="sponsor-card">
+      <span class="section-label">GitHub Sponsors</span>
+      <h2>Support the project directly.</h2>
+      <p>
+        Donations are processed through GitHub Sponsors on the maintainer profile. GitHub shows the available one-time and recurring sponsorship options for your account and region.
+      </p>
+      <a class="button button-sponsor" href="https://github.com/sponsors/MrQwenty" target="_blank" rel="noreferrer">
+        Sponsor CGP on GitHub →
+      </a>
+      <p><small>Payments, receipts and cancellation are managed by GitHub Sponsors.</small></p>
+    </article>
+
+    <article class="donation-panel">
+      <span class="section-label">What funding supports</span>
+      <h2>Public engineering work, not a closed protocol.</h2>
+      <ul class="fund-list">
+        <li><strong>Protocol specifications</strong><br />Schemas, RFCs, compatibility rules and implementation guidance.</li>
+        <li><strong>Reference implementation</strong><br />Gateway, privacy processing, context planning, receipts and adapters.</li>
+        <li><strong>Security and privacy</strong><br />Threat modelling, fuzzing, adversarial document testing and leak benchmarks.</li>
+        <li><strong>Interoperability</strong><br />Conformance fixtures, independent implementations and provider integrations.</li>
+        <li><strong>Documentation</strong><br />Examples, architecture material, onboarding guides and release documentation.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="transparency">
+    <span class="section-label">Funding principles</span>
+    <h2>Open core. Clear boundaries. No false promises.</h2>
+    <div class="transparency-grid">
+      <article class="card">
+        <span class="card-number">01</span>
+        <h3>The protocol stays inspectable</h3>
+        <p>Specifications, schemas, baseline conformance and the reference core are intended to remain public and auditable.</p>
+      </article>
+      <article class="card">
+        <span class="card-number">02</span>
+        <h3>Sponsorship does not buy control</h3>
+        <p>Funding supports development. It does not allow a sponsor to silently redefine compatibility, security or compliance semantics.</p>
+      </article>
+      <article class="card">
+        <span class="card-number">03</span>
+        <h3>Claims remain evidence-based</h3>
+        <p>CGP will not claim automatic legal compliance, perfect anonymization or superiority without reproducible evidence.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="cta-panel">
+      <div>
+        <h2>Contribute in more than one way.</h2>
+        <p>Code, documentation, review, testing, security research and sponsorship all help CGP mature.</p>
+      </div>
+      <div class="actions">
+        <a class="button button-primary" href="https://github.com/sponsors/MrQwenty">Donate through GitHub</a>
+        <a class="button button-secondary" href="/project/contributing/">Contribution guide</a>
+      </div>
+    </div>
+  </section>
+</SiteLayout>
