@@ -2,12 +2,12 @@ name: Documentation
 
 on:
   push:
-    branches: [master, main]
+    branches: [master]
     paths:
       - 'website/**'
       - '.github/workflows/docs.yml'
   pull_request:
-    branches: [master, main]
+    branches: [master]
     paths:
       - 'website/**'
       - '.github/workflows/docs.yml'
@@ -15,9 +15,11 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: documentation-${{ github.ref }}
+  group: github-pages
   cancel-in-progress: true
 
 jobs:
@@ -31,20 +33,17 @@ jobs:
       - name: Configure GitHub Pages
         if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
-          # GH_PAT must be a fine-grained PAT or GitHub App token with
-          # the repository `administration: write` permission to provision Pages.
-          token: ${{ secrets.GH_PAT }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
           node-version: 22
+          cache: npm
+          cache-dependency-path: website/package-lock.json
 
       - name: Install dependencies
         working-directory: website
-        run: npm install --no-audit --no-fund
+        run: npm ci --no-audit --no-fund
 
       - name: Build documentation
         working-directory: website
@@ -58,9 +57,6 @@ jobs:
 
   deploy:
     if: github.event_name != 'pull_request'
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
