@@ -7,11 +7,10 @@ const site = productionDomain ? `https://${productionDomain}` : 'http://localhos
 
 export default defineConfig({
   site,
-  base: '/',
   integrations: [
     starlight({
-      title: 'CGP',
-      description: 'Context Governance Protocol — governed context infrastructure for AI systems.',
+      title: 'CGP Docs',
+      description: 'Technical documentation for the Context Governance Protocol.',
       favicon: '/favicon.svg',
       logo: {
         src: './src/assets/cgp-mark.svg',
@@ -25,15 +24,12 @@ export default defineConfig({
           href: 'https://github.com/MrQwenty/fast-context-protocol',
         },
       ],
-      editLink: {
-        baseUrl: 'https://github.com/MrQwenty/fast-context-protocol/edit/master/website/src/content/docs/',
-      },
       customCss: ['./src/styles/custom.css'],
       sidebar: [
         {
           label: 'Start here',
           items: [
-            { label: 'Introduction', link: '/' },
+            { label: 'Documentation home', link: '/docs/' },
             { label: 'Quick start', slug: 'getting-started/quick-start' },
             { label: 'Project status', slug: 'project/status' },
           ],
