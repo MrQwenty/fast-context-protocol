@@ -1,0 +1,63 @@
+name: Protocol proposal
+description: Propose a change to CGP wire behavior, semantics, or conformance.
+title: "protocol: "
+labels: ["protocol", "rfc", "needs-design"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Protocol changes require interoperability, compatibility, privacy, security, and migration analysis. Accepted proposals normally become an RFC in `docs/spec/`.
+  - type: input
+    id: title
+    attributes:
+      label: Proposal name
+      placeholder: Resumable priority context streams
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What interoperability problem cannot be solved reliably by application-specific behavior?
+    validations:
+      required: true
+  - type: textarea
+    id: goals
+    attributes:
+      label: Goals and non-goals
+    validations:
+      required: true
+  - type: textarea
+    id: wire
+    attributes:
+      label: Proposed wire behavior
+      description: Include messages, fields, states, error semantics, and examples.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and migration
+      description: Explain old-client behavior, capability negotiation, versioning, and deprecation.
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: Security, privacy, and abuse analysis
+    validations:
+      required: true
+  - type: textarea
+    id: conformance
+    attributes:
+      label: Conformance tests
+      description: Describe fixtures and independently observable acceptance criteria.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives and prior art
+    validations:
+      required: true
