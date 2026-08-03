@@ -1,36 +1,28 @@
-# Project naming: Ctxora
+# Project naming: Context Governance Protocol (CGP)
 
 ## Decision
 
-**Ctxora** is the recommended working public name for the project originally introduced as **Fast Context Protocol (FCP)**.
+**Context Governance Protocol (CGP)** is the public technical name of the project initially developed as Fast Context Protocol (FCP).
 
-The name is pronounced approximately **context-or-a** and is intended to cover the complete ecosystem:
+The name is intentionally literal:
 
-- **Ctxora Protocol** — the interoperable context contract;
-- **Ctxora Gateway** — the local or sidecar runtime;
-- **`ctxora`** — the future command-line interface;
-- **Ctxora Policy Packs** — signed governance rules;
-- **Ctxora Receipts** — portable privacy, routing, policy, and context evidence.
+- **Context** — the information selected and delivered to an AI system;
+- **Governance** — privacy, security, purpose, trust, jurisdiction, oversight and evidence;
+- **Protocol** — the interoperable contract across applications, agents and providers.
 
-## Why the project needs a new name
+The full name should be used in public positioning. `CGP` is the compact technical acronym.
 
-`FCP` is a short and heavily reused acronym in technology and other industries. It does not communicate the project's broader direction: governed context planning, local privacy, trust enforcement, provider routing, and verifiable evidence.
+## Why the name changed
 
-Ctxora was selected as a working name because:
+`Fast Context Protocol` overemphasized transport speed and the acronym `FCP` is heavily reused. The project now covers a broader and more defensible problem: governing which context an AI system may receive and proving how that decision was made.
 
-1. `ctx` is familiar shorthand for context among developers;
-2. it is short enough for a CLI and package namespace;
-3. it does not restrict the project to transport speed;
-4. it can represent the protocol, runtime, policy, and evidence layers together;
-5. a preliminary exact-name screen on 3 August 2026 found no matching GitHub repository or clearly established AI context protocol using the name.
+The previously proposed working name `Ctxora` has been rejected and must not be used in new documentation, packages or interfaces.
 
-The preliminary screen is not legal clearance. Before public commercial use, the project must complete trademark, company-name, domain, package-registry, and jurisdiction-specific checks.
+A preliminary repository-name screen is not legal clearance. Before public commercial use, trademark, organization, domain and package-registry checks remain necessary.
 
-## Compatibility policy
+## Current compatibility surface
 
-The rename must not silently break existing experiments.
-
-Current compatibility names remain:
+The reference implementation still uses the original pre-alpha namespace:
 
 ```text
 Repository          fast-context-protocol
@@ -44,44 +36,44 @@ Specification IDs   FCP-NNNN
 
 ## Migration phases
 
-### N0 — Working brand
+### N0 — Public technical name
 
-- use Ctxora in public-facing documentation;
-- preserve all existing protocol and binary names;
+- use Context Governance Protocol and CGP in documentation;
+- retain all current `fcp` interfaces;
 - distinguish implemented behavior from planned architecture.
 
 ### N1 — Additive aliases
 
-- add a `ctxora` CLI;
-- add `/.well-known/ctxora`;
-- add `/ctxora/v0.x` route aliases;
-- accept `Ctxora-Version` alongside `FCP-Version`;
-- test that old and new namespaces produce equivalent behavior.
+- add a `cgp` CLI;
+- add `/.well-known/cgp` discovery;
+- add `/cgp/v0.x` route aliases;
+- accept `CGP-Version` alongside `FCP-Version`;
+- verify equivalent behavior through compatibility tests.
 
 ### N2 — Versioned namespace
 
 - publish a compatibility RFC;
-- introduce Ctxora-specific schemas, headers, and media types in a declared version;
+- introduce CGP schemas, headers and media types in a declared version;
 - provide automatic configuration migration;
 - publish a deprecation policy before changing legacy support.
 
 ### N3 — Stable ecosystem
 
-- rename the repository only after redirect and package behavior are verified;
+- rename the repository only after redirects and package behavior are verified;
 - publish signed releases and checksums;
 - complete formal naming clearance;
-- establish protocol governance independent from a single implementation.
+- establish protocol governance independent from one implementation.
 
 ## Naming principles
 
-A final project name must be:
+The project name must remain:
 
-- distinctive rather than a generic protocol acronym;
-- easy to pronounce and type internationally;
-- suitable for a CLI, package namespace, and organization name;
-- broad enough for context, privacy, policy, routing, and evidence;
-- defensible after formal legal and registry checks.
+- clear and pronounceable internationally;
+- descriptive of the real protocol boundary;
+- suitable for a CLI, package namespace and organization;
+- broad enough for context planning, privacy, policy, routing and evidence;
+- compatible with formal legal and registry checks.
 
 ## Historical identifiers
 
-The `FCP-NNNN` document identifiers may remain as historical RFC numbers even after the public brand changes. Renumbering published specifications would create needless ambiguity. Future governance can decide whether new specifications continue the sequence or adopt a Ctxora-native identifier format.
+Published `FCP-NNNN` document identifiers remain stable historical references. Renumbering specifications would create unnecessary ambiguity. Future governance can decide when new proposals adopt a CGP-native identifier sequence.
