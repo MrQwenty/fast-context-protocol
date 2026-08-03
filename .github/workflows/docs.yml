@@ -30,6 +30,9 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
+          # GH_PAT must be a fine-grained PAT or GitHub App token with
+          # the repository `administration: write` permission to provision Pages.
+          token: ${{ secrets.GH_PAT }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
