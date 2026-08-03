@@ -2,14 +2,17 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 
+const productionDomain = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+const site = productionDomain ? `https://${productionDomain}` : 'http://localhost:4321';
+
 export default defineConfig({
-  site: 'https://mrqwenty.github.io',
-  base: '/fast-context-protocol',
+  site,
+  base: '/',
   integrations: [
     starlight({
       title: 'CGP',
       description: 'Context Governance Protocol — governed context infrastructure for AI systems.',
-      favicon: '/fast-context-protocol/favicon.svg',
+      favicon: '/favicon.svg',
       logo: {
         src: './src/assets/cgp-mark.svg',
         alt: 'CGP',
