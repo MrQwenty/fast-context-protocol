@@ -1,8 +1,12 @@
-# Ctxora architecture map
+# CGP architecture map
 
-The main project README contains the product-level diagrams and integration overview. This directory is reserved for deeper component, trust-boundary, deployment, and data-flow documentation as the implementation evolves.
+The main project README and the framework-style documentation site contain the product-level diagrams and integration overview. This directory is reserved for deeper component, trust-boundary, deployment and data-flow documents as the implementation evolves.
 
-Current authoritative overview: [`../../README.md`](../../README.md).
+Authoritative entry points:
+
+- [`../../README.md`](../../README.md)
+- [`../../website/src/content/docs/architecture/overview.md`](../../website/src/content/docs/architecture/overview.md)
+- [`../../website/src/content/docs/architecture/request-lifecycle.md`](../../website/src/content/docs/architecture/request-lifecycle.md)
 
 Planned architecture documents:
 
@@ -10,7 +14,7 @@ Planned architecture documents:
 - context planner and ranking model;
 - local privacy trust boundary;
 - provider routing and capability attestations;
-- context trust firewall and taint propagation;
+- Context Trust Firewall and taint propagation;
 - receipt signing and verification;
 - deletion and invalidation propagation;
 - EU policy-pack compilation and evidence export.
