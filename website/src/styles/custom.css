@@ -1,0 +1,77 @@
+:root {
+  --sl-color-accent-low: #20194e;
+  --sl-color-accent: #806cff;
+  --sl-color-accent-high: #d8d1ff;
+  --sl-color-white: #f7f9ff;
+  --sl-color-gray-1: #edf1fa;
+  --sl-color-gray-2: #c6cede;
+  --sl-color-gray-3: #8e9aae;
+  --sl-color-gray-4: #596479;
+  --sl-color-gray-5: #343e52;
+  --sl-color-gray-6: #20283a;
+  --sl-color-black: #0b1020;
+}
+
+[data-theme='light'] {
+  --sl-color-accent-low: #ebe8ff;
+  --sl-color-accent: #5d42da;
+  --sl-color-accent-high: #24175d;
+  --sl-color-white: #11172a;
+  --sl-color-gray-1: #222b40;
+  --sl-color-gray-2: #3f4b62;
+  --sl-color-gray-3: #66738a;
+  --sl-color-gray-4: #9da8ba;
+  --sl-color-gray-5: #d7dce7;
+  --sl-color-gray-6: #eef1f7;
+  --sl-color-gray-7: #f8f9fc;
+  --sl-color-black: #ffffff;
+}
+
+.hero > img,
+.hero img {
+  filter: drop-shadow(0 22px 45px rgba(84, 67, 190, 0.32));
+}
+
+.hero .tagline {
+  max-width: 62rem;
+}
+
+.cgp-flow {
+  margin: 1.75rem 0;
+  padding: 1.1rem;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.9rem;
+  background: color-mix(in srgb, var(--sl-color-black) 92%, var(--sl-color-accent) 8%);
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  line-height: 1.75;
+  white-space: pre;
+}
+
+.cgp-decision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.65rem;
+  margin: 1.25rem 0;
+}
+
+.cgp-decision-grid strong {
+  display: block;
+  padding: 0.85rem 0.7rem;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.75rem;
+  text-align: center;
+  letter-spacing: 0.045em;
+  background: color-mix(in srgb, var(--sl-color-black) 88%, var(--sl-color-accent) 12%);
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.status-implemented { background: #0d5f4c; color: #dffff5; }
+.status-experimental { background: #695417; color: #fff4c2; }
+.status-planned { background: #383f55; color: #e7ebf6; }
