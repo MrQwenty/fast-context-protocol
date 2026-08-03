@@ -75,6 +75,15 @@ export default defineConfig({
           ],
         },
         {
+          label: 'Community',
+          items: [
+            { label: 'Contributing', slug: 'project/contributing' },
+            { label: 'Governance and maintainers', slug: 'project/governance' },
+            { label: 'Security reporting', slug: 'project/security' },
+            { label: 'Support and sponsorship', slug: 'project/support' },
+          ],
+        },
+        {
           label: 'Project',
           items: [
             { label: 'Roadmap', slug: 'project/roadmap' },
