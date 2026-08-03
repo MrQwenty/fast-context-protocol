@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fcp.dev/schema/fcp-privacy-0.1.schema.json",
+  "title": "FCP Local Privacy Gateway 0.1",
+  "type": "object",
+  "$defs": {
+    "privacyPolicy": {
+      "type": "object",
+      "required": ["mode", "localOnly", "failClosed"],
+      "properties": {
+        "mode": {"enum": ["redact", "pseudonymize", "anonymize"]},
+        "localOnly": {"const": true},
+        "failClosed": {"type": "boolean"},
+        "reversible": {"type": "boolean"},
+        "scopeId": {"type": "string"},
+        "entityTypes": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "customTerms": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "allowList": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "minimumConfidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "maxResidualRisk": {"type": "number", "minimum": 0, "maximum": 1},
+        "preserveLength": {"type": "boolean"},
+        "vaultKeyId": {"type": "string"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"reversible": {"const": true}}, "required": ["reversible"]},
+          "then": {"properties": {"mode": {"const": "pseudonymize"}}}
+        }
+      ],
+      "additionalProperties": false
+    },
+    "privacyReceipt": {
+      "type": "object",
+      "required": ["receiptId", "documentId", "mode", "policyDigest", "inputDigest", "outputDigest", "processor", "processorVersion", "localOnly", "failClosed", "reversible", "detected", "transformed", "unresolved", "residualRisk", "passed", "createdAt"],
+      "properties": {
+        "receiptId": {"type": "string", "minLength": 1},
+        "documentId": {"type": "string", "minLength": 1},
+        "mode": {"enum": ["redact", "pseudonymize", "anonymize"]},
+        "policyDigest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "inputDigest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "outputDigest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "processor": {"type": "string"},
+        "processorVersion": {"type": "string"},
+        "localOnly": {"const": true},
+        "failClosed": {"type": "boolean"},
+        "reversible": {"type": "boolean"},
+        "detected": {"type": "integer", "minimum": 0},
+        "transformed": {"type": "integer", "minimum": 0},
+        "unresolved": {"type": "integer", "minimum": 0},
+        "entityCounts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "residualRisk": {"type": "number", "minimum": 0, "maximum": 1},
+        "passed": {"type": "boolean"},
+        "warnings": {"type": "array", "items": {"type": "string"}},
+        "createdAt": {"type": "string", "format": "date-time"},
+        "signature": {"type": "object"}
+      },
+      "additionalProperties": false
+    }
+  }
+}
