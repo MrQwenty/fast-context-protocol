@@ -1,0 +1,33 @@
+name: Question or support
+description: Ask about using, evaluating, or contributing to CGP.
+title: "question: "
+labels: ["question"]
+body:
+  - type: checkboxes
+    attributes:
+      label: Preflight
+      options:
+        - label: I read the documentation and searched existing issues.
+          required: true
+        - label: I understand that maintainers cannot provide legal advice or compliance certification.
+          required: true
+        - label: I removed secrets and personal or customer data.
+          required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: What are you trying to do?
+    validations:
+      required: true
+  - type: textarea
+    id: attempted
+    attributes:
+      label: What have you tried?
+      description: Include sanitized commands, configuration, and results.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Version, OS, language, provider, and deployment mode where relevant.
