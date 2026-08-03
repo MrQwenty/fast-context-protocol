@@ -24,7 +24,7 @@ jobs:
       - name: Test
         run: go test -race ./...
       - name: Build
-        run: go build ./cmd/fcpd ./cmd/fcpctl ./cmd/fcpconform
+        run: go build ./cmd/fcpd ./cmd/fcpctl ./cmd/fcpconform ./cmd/fcpprivacy
       - name: Conformance smoke test
         run: |
           go run ./cmd/fcpd -listen :8080 -catalog examples/basic-provider/context.json >/tmp/fcpd.log 2>&1 &
@@ -35,3 +35,14 @@ jobs:
             sleep 0.2
           done
           go run ./cmd/fcpconform -endpoint http://127.0.0.1:8080
+      - name: Privacy gateway smoke test
+        run: |
+          go run ./cmd/fcpprivacy \
+            -input examples/privacy/sample.txt \
+            -output /tmp/sample.sanitized.txt \
+            -report /tmp/sample.privacy.json \
+            -custom-terms examples/privacy/custom-terms.txt \
+            -mode anonymize
+          ! grep -q 'Mario Rossi' /tmp/sample.sanitized.txt
+          ! grep -q 'mario.rossi@example.com' /tmp/sample.sanitized.txt
+          grep -q '"passed": true' /tmp/sample.privacy.json
