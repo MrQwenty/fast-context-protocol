@@ -1,0 +1,7 @@
+Nome: Mario Rossi
+Email: mario.rossi@example.com
+Telefono: +39 333 123 4567
+Indirizzo: Via Roma 10, 46100 Mantova
+IBAN: IT60X0542811101000000123456
+Data di nascita: 12/04/1985
+Progetto riservato: Project Aurora
