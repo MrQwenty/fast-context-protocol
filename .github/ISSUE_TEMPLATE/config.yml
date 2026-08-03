@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/MrQwenty/fast-context-protocol/security/advisories/new
+    about: Report vulnerabilities privately. Do not disclose security issues in public tickets.
+  - name: Documentation website
+    url: https://mrqwenty.github.io/fast-context-protocol/
+    about: Read the documentation before opening an issue.
+  - name: GitHub Sponsors
+    url: https://github.com/sponsors/MrQwenty
+    about: Support continued maintenance of CGP.
