@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
@@ -82,5 +83,6 @@ export default defineConfig({
         },
       ],
     }),
+    sitemap(),
   ],
 });
