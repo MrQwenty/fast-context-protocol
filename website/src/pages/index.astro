@@ -2,97 +2,174 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 ---
 <SiteLayout
-  title="CGP — Context Governance Protocol"
-  description="Open infrastructure for private, policy-bound and provable AI context."
+  title="CGP — Governed context for AI"
+  description="CGP is the open protocol and runtime for private, policy-bound and provable AI context."
 >
   <section class="hero">
-    <span class="eyebrow">Open protocol · Pre-alpha</span>
     <div class="hero-grid">
       <div>
-        <h1>Govern what AI <span class="gradient-text">is allowed to know.</span></h1>
+        <span class="eyebrow">Open protocol · Pre-alpha</span>
+        <h1>Control what AI <span class="gradient-text">can know and use.</span></h1>
         <p class="hero-copy">
-          CGP is an open protocol and runtime layer for selecting, sanitizing, authorizing and proving the context delivered to AI systems.
+          CGP is the governed context layer between your data and AI models. It selects what is necessary, removes what is sensitive, enforces policy and records why every decision was made.
         </p>
         <div class="actions">
-          <a class="button button-primary" href="/docs/">Read the documentation →</a>
-          <a class="button button-secondary" href="https://github.com/MrQwenty/fast-context-protocol">Explore the source</a>
+          <a class="button button-primary" href="/getting-started/quick-start/">Start building →</a>
+          <a class="button button-secondary" href="/docs/">Explore documentation</a>
+        </div>
+        <div class="hero-proof" aria-label="Project properties">
+          <span>Apache-2.0</span>
+          <span>Model agnostic</span>
+          <span>Privacy first</span>
+          <span>MCP compatible direction</span>
         </div>
       </div>
-      <div class="terminal" aria-label="Example context contract">
-        <div class="terminal-head">
-          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          <span class="terminal-title">context-contract.json</span>
+
+      <div class="governance-console" aria-label="CGP governance pipeline preview">
+        <div class="console-bar">
+          <div class="console-dots"><span></span><span></span><span></span></div>
+          <span class="console-title">cgp / context-resolution</span>
+          <span class="console-status">POLICY ACTIVE</span>
         </div>
-        <pre><code>&#123;
-  <span class="code-key">"intent"</span>: <span class="code-value">"legal-document-summary"</span>,
-  <span class="code-key">"budget"</span>: &#123;
-    <span class="code-key">"maxTokens"</span>: 8000,
-    <span class="code-key">"maxLatencyMs"</span>: 100
-  &#125;,
-  <span class="code-key">"privacy"</span>: <span class="code-value">"anonymous-only"</span>,
-  <span class="code-key">"jurisdiction"</span>: <span class="code-value">"EU"</span>,
-  <span class="code-key">"retention"</span>: <span class="code-value">"zero"</span>,
-  <span class="code-key">"provenance"</span>: true
-&#125;</code></pre>
-        <div class="decision-strip">
-          <span>ALLOW</span><span>SANITIZE</span><span>ROUTE_LOCAL</span><span>REQUIRE_HUMAN</span><span>DENY</span>
+        <div class="console-body">
+          <div class="context-request">
+            <div class="context-request-head">
+              <strong>legal-document-summary</strong>
+              <span>request_0193</span>
+            </div>
+            <div class="contract-grid">
+              <div class="contract-item"><small>privacy</small><strong>anonymous-only</strong></div>
+              <div class="contract-item"><small>jurisdiction</small><strong>EU</strong></div>
+              <div class="contract-item"><small>token budget</small><strong>8,000</strong></div>
+              <div class="contract-item"><small>retention</small><strong>zero</strong></div>
+            </div>
+          </div>
+          <div class="pipeline-list">
+            <div class="pipeline-row">
+              <span class="pipeline-icon">01</span>
+              <span><strong>Local privacy scan</strong><small>12 identifiers transformed</small></span>
+              <span class="pipeline-result">PASSED</span>
+            </div>
+            <div class="pipeline-row">
+              <span class="pipeline-icon">02</span>
+              <span><strong>Context planning</strong><small>62% irrelevant context omitted</small></span>
+              <span class="pipeline-result">PLANNED</span>
+            </div>
+            <div class="pipeline-row">
+              <span class="pipeline-icon">03</span>
+              <span><strong>Provider policy</strong><small>EU processing · zero retention</small></span>
+              <span class="pipeline-result review">REVIEWED</span>
+            </div>
+          </div>
+          <div class="receipt-row">
+            <span>Evidence bundle generated</span>
+            <strong>receipt:7f0a…9c2e</strong>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <span class="section-label">The missing control plane</span>
-    <h2>AI connectivity grew faster than AI governance.</h2>
-    <p class="section-lead">
-      Applications can reach files, tools, databases and APIs, but the logic deciding what reaches a model is still scattered across prompts, retrieval code, security middleware and compliance documents.
-    </p>
-    <div class="feature-grid">
-      <article class="card"><span class="card-number">01</span><h3>Context planning</h3><p>Resolve the smallest useful context under explicit token, byte, freshness and latency constraints.</p></article>
-      <article class="card"><span class="card-number">02</span><h3>Local privacy</h3><p>Extract, redact, pseudonymize or anonymize documents before any external inference occurs.</p></article>
-      <article class="card"><span class="card-number">03</span><h3>Policy enforcement</h3><p>Bind context to purpose, jurisdiction, retention, provider capabilities and human oversight.</p></article>
-      <article class="card"><span class="card-number">04</span><h3>Trust boundaries</h3><p>Keep untrusted documents and tool output from becoming instructions or permissions.</p></article>
-      <article class="card"><span class="card-number">05</span><h3>Provider routing</h3><p>Choose local, EU-hosted or cloud inference based on declared processing requirements.</p></article>
-      <article class="card"><span class="card-number">06</span><h3>Portable evidence</h3><p>Produce receipts that reconstruct context, transformations, policy and routing decisions.</p></article>
+    <div class="section-header">
+      <div>
+        <span class="section-label">The governed context stack</span>
+        <h2>One control plane for context, privacy and trust.</h2>
+      </div>
+      <p class="section-lead">
+        Replace scattered prompt filters, document scrubbing and provider-specific rules with a portable contract enforced before inference.
+      </p>
+    </div>
+
+    <div class="bento-grid">
+      <a class="bento-card wide accent" href="/concepts/context-contract/">
+        <div class="card-orbit"><i></i></div>
+        <div class="card-top"><span class="card-index">01 / CONTRACT</span><span class="card-arrow">↗</span></div>
+        <h3>Declare exactly what the model is allowed to receive.</h3>
+        <p>Intent, token and byte budgets, freshness, provenance, privacy level, jurisdiction and retention become machine-readable constraints.</p>
+      </a>
+
+      <a class="bento-card purple" href="/privacy/local-gateway/">
+        <div class="card-top"><span class="card-index">02 / PRIVACY</span><span class="card-arrow">↗</span></div>
+        <h3>Sanitize before transmission.</h3>
+        <p>Extract and transform documents locally. Unsupported or insufficiently inspected content can fail closed.</p>
+      </a>
+
+      <a class="bento-card" href="/architecture/overview/">
+        <div class="card-top"><span class="card-index">03 / PLANNING</span><span class="card-arrow">↗</span></div>
+        <h3>Compile the minimum sufficient context.</h3>
+        <p>Rank context nodes under explicit token, byte, freshness and latency budgets instead of sending full document dumps.</p>
+      </a>
+
+      <a class="bento-card" href="/security/trust-firewall/">
+        <div class="card-top"><span class="card-index">04 / TRUST</span><span class="card-arrow">↗</span></div>
+        <h3>Keep data from becoming instructions.</h3>
+        <p>Untrusted files, web content and tool output cannot promote themselves into policies, permissions or executable actions.</p>
+      </a>
+
+      <a class="bento-card half" href="/governance/eu-compliance/">
+        <div class="card-top"><span class="card-index">05 / GOVERNANCE</span><span class="card-arrow">↗</span></div>
+        <h3>Turn requirements into deterministic decisions.</h3>
+        <p>CGP targets five runtime outcomes: ALLOW, SANITIZE, ROUTE_LOCAL, REQUIRE_HUMAN and DENY.</p>
+      </a>
+
+      <a class="bento-card half accent" href="/reference/receipts/">
+        <div class="card-top"><span class="card-index">06 / EVIDENCE</span><span class="card-arrow">↗</span></div>
+        <h3>Prove what happened without exposing the original secrets.</h3>
+        <p>Portable receipts capture context, transformations, routing and policy decisions for audit and debugging.</p>
+      </a>
     </div>
   </section>
 
   <section class="section">
-    <span class="section-label">Request lifecycle</span>
-    <h2>One governed path from source to model.</h2>
-    <p class="section-lead">CGP turns data access into a deterministic pipeline rather than an unbounded prompt assembly process.</p>
-    <div class="flow">
-      <div class="flow-step"><small>01</small><strong>Inspect source</strong></div>
-      <div class="flow-step active"><small>02</small><strong>Sanitize locally</strong></div>
-      <div class="flow-step"><small>03</small><strong>Plan context</strong></div>
-      <div class="flow-step"><small>04</small><strong>Enforce trust</strong></div>
-      <div class="flow-step"><small>05</small><strong>Route provider</strong></div>
-      <div class="flow-step active"><small>06</small><strong>Issue receipts</strong></div>
+    <div class="section-header">
+      <div>
+        <span class="section-label">Request lifecycle</span>
+        <h2>From raw source to authorized context.</h2>
+      </div>
+      <p class="section-lead">Every stage has an explicit trust boundary and a documented output. Select any stage to inspect its design.</p>
+    </div>
+
+    <div class="pipeline-grid">
+      <a class="pipeline-step" href="/privacy/local-gateway/"><small>01</small><strong>Inspect</strong><span>Parse source locally</span></a>
+      <a class="pipeline-step" href="/privacy/anonymization/"><small>02</small><strong>Sanitize</strong><span>Remove sensitive data</span></a>
+      <a class="pipeline-step" href="/concepts/context-graph/"><small>03</small><strong>Structure</strong><span>Create context nodes</span></a>
+      <a class="pipeline-step" href="/architecture/request-lifecycle/"><small>04</small><strong>Plan</strong><span>Enforce budgets</span></a>
+      <a class="pipeline-step" href="/security/trust-firewall/"><small>05</small><strong>Authorize</strong><span>Apply trust and policy</span></a>
+      <a class="pipeline-step" href="/reference/receipts/"><small>06</small><strong>Prove</strong><span>Generate receipts</span></a>
     </div>
   </section>
 
   <section class="section">
-    <span class="section-label">Different layer, different question</span>
-    <h2>CGP complements MCP instead of copying it.</h2>
-    <p class="section-lead">MCP connects applications to tools and resources. CGP governs the context compiled from those resources before it reaches a model.</p>
+    <div class="section-header">
+      <div>
+        <span class="section-label">CGP + MCP</span>
+        <h2>Connectivity and governance are different layers.</h2>
+      </div>
+      <p class="section-lead">MCP exposes tools and resources. CGP governs the context compiled from them before that context reaches a model.</p>
+    </div>
+
     <div class="comparison">
       <div class="comparison-row"><div>Concern</div><div>MCP</div><div>CGP</div></div>
-      <div class="comparison-row"><div>Primary question</div><div>What is available?</div><div class="highlight">What may the model receive now?</div></div>
-      <div class="comparison-row"><div>Token and latency budgets</div><div>Host-defined</div><div class="highlight">Protocol contract</div></div>
+      <div class="comparison-row"><div>Primary question</div><div>What is available?</div><div class="highlight">What may be used now?</div></div>
+      <div class="comparison-row"><div>Context budgets</div><div>Host-defined</div><div class="highlight">Protocol contract</div></div>
       <div class="comparison-row"><div>Local anonymization</div><div>Outside core scope</div><div class="highlight">First-class gateway</div></div>
       <div class="comparison-row"><div>Purpose and jurisdiction</div><div>Application logic</div><div class="highlight">Governance primitives</div></div>
       <div class="comparison-row"><div>Decision evidence</div><div>Implementation-specific</div><div class="highlight">Portable receipts</div></div>
+    </div>
+    <div class="actions">
+      <a class="button button-secondary" href="/integrations/mcp/">Read the integration model →</a>
     </div>
   </section>
 
   <section class="section">
     <div class="cta-panel">
       <div>
-        <h2>Help build open governed-context infrastructure.</h2>
-        <p>Use the protocol, contribute to the implementation or fund independent development through GitHub Sponsors.</p>
+        <h2>Build the open standard for governed AI context.</h2>
+        <p>Use the reference implementation, contribute to the protocol or fund independent open-source development.</p>
       </div>
       <div class="actions">
-        <a class="button button-primary" href="/docs/">Start with the docs</a>
+        <a class="button button-primary" href="/getting-started/quick-start/">Quick start</a>
         <a class="button button-sponsor" href="/donations/">Support CGP</a>
       </div>
     </div>
