@@ -15,50 +15,91 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#07090d" />
+    <meta name="theme-color" content="#080b10" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" href="/favicon.svg" />
     <title>{title}</title>
   </head>
   <body>
     <div class="site-shell">
-      <header class="site-header">
-        <a class="brand" href="/" aria-label="CGP home">
-          <span class="brand-mark" aria-hidden="true">C</span>
-          <span>
-            <strong>CGP</strong>
-            <small>Context Governance Protocol</small>
-          </span>
-        </a>
-        <nav class="site-nav" aria-label="Primary navigation">
-          <a href="/docs/">Documentation</a>
-          <a href="/architecture/overview/">Architecture</a>
-          <a href="/privacy/local-gateway/">Privacy</a>
-          <a href="/donations/">Donations</a>
-          <a class="nav-github" href="https://github.com/MrQwenty/fast-context-protocol" target="_blank" rel="noreferrer">GitHub</a>
-        </nav>
+      <header class="site-header-wrap">
+        <div class="site-header">
+          <a class="brand" href="/" aria-label="CGP home">
+            <img class="brand-logo" src="/favicon.svg" width="42" height="42" alt="CGP logo" />
+            <span class="brand-copy">
+              <strong>CGP</strong>
+              <small>Context Governance Protocol</small>
+            </span>
+          </a>
+
+          <nav class="site-nav desktop-nav" aria-label="Primary navigation">
+            <a href="/docs/">Documentation</a>
+            <a href="/architecture/overview/">Architecture</a>
+            <a href="/privacy/local-gateway/">Privacy</a>
+            <a href="/project/roadmap/">Roadmap</a>
+            <a href="/donations/">Donate</a>
+          </nav>
+
+          <div class="header-actions">
+            <a class="header-github" href="https://github.com/MrQwenty/fast-context-protocol" target="_blank" rel="noreferrer" aria-label="Open CGP on GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.41-1.27.74-1.56-2.57-.29-5.27-1.28-5.27-5.69 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.47.11-3.06 0 0 .98-.31 3.16 1.18a10.9 10.9 0 0 1 5.75 0c2.19-1.49 3.16-1.18 3.16-1.18.64 1.59.24 2.76.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.71 5.39-5.29 5.68.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+              <span>GitHub</span>
+            </a>
+
+            <details class="mobile-menu">
+              <summary aria-label="Open navigation"><span></span><span></span><span></span></summary>
+              <nav aria-label="Mobile navigation">
+                <a href="/docs/">Documentation</a>
+                <a href="/architecture/overview/">Architecture</a>
+                <a href="/privacy/local-gateway/">Privacy</a>
+                <a href="/project/roadmap/">Roadmap</a>
+                <a href="/donations/">Donate</a>
+                <a href="https://github.com/MrQwenty/fast-context-protocol">GitHub</a>
+              </nav>
+            </details>
+          </div>
+        </div>
       </header>
+
       <main>
         <slot />
       </main>
+
       <footer class="site-footer">
-        <div>
+        <div class="footer-primary">
           <a class="brand footer-brand" href="/">
-            <span class="brand-mark" aria-hidden="true">C</span>
-            <span><strong>CGP</strong><small>Open governed-context infrastructure</small></span>
+            <img class="brand-logo" src="/favicon.svg" width="42" height="42" alt="CGP logo" />
+            <span class="brand-copy"><strong>CGP</strong><small>Context Governance Protocol</small></span>
           </a>
-          <p>Private by default. Policy-bound. Provable.</p>
+          <p>Open infrastructure for private, policy-bound and provable AI context.</p>
         </div>
-        <div class="footer-links">
-          <a href="/docs/">Docs</a>
+        <div class="footer-column">
+          <strong>Build</strong>
+          <a href="/docs/">Documentation</a>
+          <a href="/getting-started/quick-start/">Quick start</a>
+          <a href="/reference/http-api/">HTTP API</a>
+          <a href="/integrations/mcp/">MCP integration</a>
+        </div>
+        <div class="footer-column">
+          <strong>Project</strong>
           <a href="/project/roadmap/">Roadmap</a>
+          <a href="/project/status/">Status</a>
           <a href="/project/security/">Security</a>
-          <a href="/donations/">Sponsor</a>
-          <a href="https://github.com/MrQwenty/fast-context-protocol">Repository</a>
+          <a href="/donations/">Donations</a>
         </div>
-        <div class="footer-meta">
-          <span>Apache-2.0</span>
-          <span>Pre-alpha</span>
+        <div class="footer-column">
+          <strong>Community</strong>
+          <a href="https://github.com/MrQwenty/fast-context-protocol">GitHub</a>
+          <a href="/project/contributing/">Contributing</a>
+          <a href="/project/governance/">Governance</a>
+          <a href="https://github.com/sponsors/MrQwenty">GitHub Sponsors</a>
+        </div>
+        <div class="footer-bottom">
+          <span>Apache-2.0 · Pre-alpha</span>
+          <span>Built openly by the CGP community.</span>
         </div>
       </footer>
     </div>
