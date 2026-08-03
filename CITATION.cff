@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use Context Governance Protocol in research or published work, please cite this software."
+title: "Context Governance Protocol"
+type: software
+authors:
+  - family-names: Pelosi
+    given-names: Matteo
+    alias: MrQwenty
+repository-code: "https://github.com/MrQwenty/fast-context-protocol"
+url: "https://mrqwenty.github.io/fast-context-protocol/"
+license: Apache-2.0
+abstract: >-
+  Context Governance Protocol is an experimental, model-agnostic protocol and
+  runtime for selecting, sanitizing, transporting, governing, and proving the
+  context delivered to AI systems under explicit privacy, security, provenance,
+  freshness, token, latency, purpose, and jurisdiction constraints.
+keywords:
+  - artificial intelligence
+  - context governance
+  - privacy
+  - interoperability
+  - protocol
+  - AI governance
