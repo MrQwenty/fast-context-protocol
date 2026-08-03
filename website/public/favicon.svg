@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title">
+  <title id="title">CGP mark</title>
+  <defs><linearGradient id="g" x1="20" y1="20" x2="160" y2="160" gradientUnits="userSpaceOnUse"><stop stop-color="#7657ff"/><stop offset="1" stop-color="#16c6a3"/></linearGradient></defs>
+  <path d="M90 10 157 48v84L90 170l-67-38V48Z" fill="#0d1224" stroke="url(#g)" stroke-width="8"/>
+  <circle cx="90" cy="90" r="25" fill="none" stroke="url(#g)" stroke-width="8"/>
+  <circle cx="54" cy="57" r="8" fill="#7657ff"/><circle cx="128" cy="57" r="8" fill="#16c6a3"/><circle cx="54" cy="125" r="8" fill="#16c6a3"/><circle cx="128" cy="125" r="8" fill="#7657ff"/>
+  <path d="m60 62 15 14M120 62l-15 14M60 120l15-14M120 120l-15-14" stroke="#dce5ff" stroke-width="6" stroke-linecap="round"/>
+</svg>
