@@ -1,0 +1,56 @@
+# Context Governance Protocol (CGP)
+
+> Open protocol and runtime for governed AI context: privacy, trust, provenance, purpose, policy and verifiable receipts.
+
+Documentation: https://mrqwenty.github.io/fast-context-protocol/
+Source: https://github.com/MrQwenty/fast-context-protocol
+
+## Start here
+
+- Introduction: https://mrqwenty.github.io/fast-context-protocol/
+- Quick start: https://mrqwenty.github.io/fast-context-protocol/getting-started/quick-start/
+- Project status: https://mrqwenty.github.io/fast-context-protocol/project/status/
+
+## Core concepts
+
+- Context Contract: https://mrqwenty.github.io/fast-context-protocol/concepts/context-contract/
+- Context Graph: https://mrqwenty.github.io/fast-context-protocol/concepts/context-graph/
+- Receipts: https://mrqwenty.github.io/fast-context-protocol/reference/receipts/
+
+## Architecture
+
+- System overview: https://mrqwenty.github.io/fast-context-protocol/architecture/overview/
+- Request lifecycle: https://mrqwenty.github.io/fast-context-protocol/architecture/request-lifecycle/
+
+## Privacy and security
+
+- Local Privacy Gateway: https://mrqwenty.github.io/fast-context-protocol/privacy/local-gateway/
+- Anonymization model: https://mrqwenty.github.io/fast-context-protocol/privacy/anonymization/
+- Context Trust Firewall: https://mrqwenty.github.io/fast-context-protocol/security/trust-firewall/
+- Security policy: https://github.com/MrQwenty/fast-context-protocol/blob/master/SECURITY.md
+
+## Governance and integration
+
+- EU governance direction: https://mrqwenty.github.io/fast-context-protocol/governance/eu-compliance/
+- CGP and MCP: https://mrqwenty.github.io/fast-context-protocol/integrations/mcp/
+- Open-source strategy: https://mrqwenty.github.io/fast-context-protocol/project/open-source/
+- Governance: https://github.com/MrQwenty/fast-context-protocol/blob/master/GOVERNANCE.md
+- Contributing: https://github.com/MrQwenty/fast-context-protocol/blob/master/CONTRIBUTING.md
+
+## Reference
+
+- HTTP API: https://mrqwenty.github.io/fast-context-protocol/reference/http-api/
+- Repository layout: https://mrqwenty.github.io/fast-context-protocol/reference/repository-layout/
+- Specifications: https://github.com/MrQwenty/fast-context-protocol/tree/master/docs/spec
+- JSON Schemas: https://github.com/MrQwenty/fast-context-protocol/tree/master/spec/schema
+
+## Project
+
+- Roadmap: https://mrqwenty.github.io/fast-context-protocol/project/roadmap/
+- Naming and compatibility: https://mrqwenty.github.io/fast-context-protocol/project/naming/
+- Support: https://github.com/MrQwenty/fast-context-protocol/blob/master/SUPPORT.md
+- Sponsors: https://github.com/sponsors/MrQwenty
+
+## Important limitations
+
+CGP is pre-alpha. The core context planning protocol, privacy gateway and baseline conformance runner are reference implementations. Provider routing, EU policy compilation, Context Trust Firewall enforcement and zero-config proxy integration remain roadmap work. CGP is a compliance accelerator and evidence system, not automatic legal certification.
