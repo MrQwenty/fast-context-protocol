@@ -1,0 +1,32 @@
+changelog:
+  exclude:
+    labels:
+      - skip-changelog
+      - dependencies
+  categories:
+    - title: Breaking changes
+      labels:
+        - breaking-change
+    - title: Protocol and schemas
+      labels:
+        - protocol
+        - rfc
+        - schema
+    - title: Privacy and security
+      labels:
+        - privacy
+        - security
+    - title: Features
+      labels:
+        - enhancement
+        - feature
+    - title: Fixes
+      labels:
+        - bug
+        - fix
+    - title: Documentation
+      labels:
+        - documentation
+    - title: Other changes
+      labels:
+        - '*'
