@@ -1,13 +1,13 @@
-name: Documentation
+name: Documentation CI
 
 on:
   push:
-    branches: [master]
+    branches: [master, main]
     paths:
       - 'website/**'
       - '.github/workflows/docs.yml'
   pull_request:
-    branches: [master]
+    branches: [master, main]
     paths:
       - 'website/**'
       - '.github/workflows/docs.yml'
@@ -15,11 +15,9 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: github-pages
+  group: documentation-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -30,40 +28,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Configure GitHub Pages
-        if: github.event_name != 'pull_request'
-        uses: actions/configure-pages@v5
-
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: website/package-lock.json
 
       - name: Install dependencies
         working-directory: website
-        run: npm ci --no-audit --no-fund
+        run: npm install --no-audit --no-fund
 
       - name: Build documentation
         working-directory: website
         run: npm run build
-
-      - name: Upload GitHub Pages artifact
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: website/dist
-
-  deploy:
-    if: github.event_name != 'pull_request'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
