@@ -1,0 +1,17 @@
+# Default ownership
+* @MrQwenty
+
+# Protocol and schemas
+/docs/spec/ @MrQwenty
+/spec/ @MrQwenty
+/internal/protocol/ @MrQwenty
+
+# Security and privacy
+/SECURITY.md @MrQwenty
+/internal/privacy/ @MrQwenty
+
+# Automation and releases
+/.github/ @MrQwenty
+
+# Documentation website
+/website/ @MrQwenty
