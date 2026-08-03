@@ -1,0 +1,66 @@
+---
+import '../styles/site.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#07090d" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="CGP home">
+          <span class="brand-mark" aria-hidden="true">C</span>
+          <span>
+            <strong>CGP</strong>
+            <small>Context Governance Protocol</small>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="/docs/">Documentation</a>
+          <a href="/architecture/overview/">Architecture</a>
+          <a href="/privacy/local-gateway/">Privacy</a>
+          <a href="/donations/">Donations</a>
+          <a class="nav-github" href="https://github.com/MrQwenty/fast-context-protocol" target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <div>
+          <a class="brand footer-brand" href="/">
+            <span class="brand-mark" aria-hidden="true">C</span>
+            <span><strong>CGP</strong><small>Open governed-context infrastructure</small></span>
+          </a>
+          <p>Private by default. Policy-bound. Provable.</p>
+        </div>
+        <div class="footer-links">
+          <a href="/docs/">Docs</a>
+          <a href="/project/roadmap/">Roadmap</a>
+          <a href="/project/security/">Security</a>
+          <a href="/donations/">Sponsor</a>
+          <a href="https://github.com/MrQwenty/fast-context-protocol">Repository</a>
+        </div>
+        <div class="footer-meta">
+          <span>Apache-2.0</span>
+          <span>Pre-alpha</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
